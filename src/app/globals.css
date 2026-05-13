@@ -97,7 +97,16 @@ input, textarea { font-family: inherit; }
 /* =============================================================
    ANIMATIONS
    ============================================================= */
-@keyframes fadeIn      { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cursorBlink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+
+.hero-cursor {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 300;
+  margin-left: 2px;
+  transition: opacity 0.08s;
+  line-height: 1;
+}
 @keyframes fadeInUp    { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes pulse       { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.6; transform:scale(1.2); } }
 @keyframes modalIn     { from { opacity:0; transform:translateY(16px) scale(.97); } to { opacity:1; transform:translateY(0) scale(1); } }

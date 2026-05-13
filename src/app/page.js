@@ -4,6 +4,17 @@ import AnimateOnScroll from '@/components/AnimateOnScroll';
 import AnimatedCounter from '@/components/AnimatedCounter';
 
 const Globe = dynamic(() => import('@/components/Globe'), { ssr: false });
+const HeroCanvas = dynamic(() => import('@/components/HeroCanvas'), { ssr: false });
+const HeroHeading = dynamic(() => import('@/components/HeroHeading'), {
+  ssr: false,
+  loading: () => (
+    <h1 className="animate-fade-in-up">
+      Building Digital{' '}
+      <span className="text-gold-gradient">Innovation</span>
+      {' '}Across Africa
+    </h1>
+  ),
+});
 
 /* ─── Icon Components ──────────────────────────────────── */
 
@@ -95,6 +106,7 @@ export default function HomePage() {
     <>
       {/* ══════ HERO SECTION ══════ */}
       <section className="hero bg-grid">
+        <HeroCanvas />
         <div className="hero-orb hero-orb-1" />
         <div className="hero-orb hero-orb-2" />
         <div className="hero-orb hero-orb-3" />
@@ -111,11 +123,7 @@ export default function HomePage() {
               <span>Diversified Enterprise</span>
             </div>
 
-            <h1 className="animate-fade-in-up">
-              Building Digital{' '}
-              <span className="text-gold-gradient">Innovation</span>
-              {' '}Across Africa
-            </h1>
+            <HeroHeading />
 
             <p className="hero-subtitle animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
               ALFA Global Ltd is a technology and innovation company building digital

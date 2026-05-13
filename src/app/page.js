@@ -95,6 +95,10 @@ export default function HomePage() {
     <>
       {/* ══════ HERO SECTION ══════ */}
       <section className="hero bg-grid">
+        <div className="hero-orb hero-orb-1" />
+        <div className="hero-orb hero-orb-2" />
+        <div className="hero-orb hero-orb-3" />
+        <div className="hero-orb hero-orb-4" />
         <div className="hero-glow" />
         <div className="hero-glow-secondary" />
         <div className="hero-fade-bottom" />
@@ -164,7 +168,7 @@ export default function HomePage() {
           </div>
 
           {/* Stats */}
-          <AnimateOnScroll delay={300}>
+          <AnimateOnScroll delay={300} animation="zoom">
             <div className="stats-grid">
               {[
                 { value: '2026', label: 'Founded' },
@@ -194,7 +198,7 @@ export default function HomePage() {
 
           <div className="focus-grid">
             {focusAreas.map((area, index) => (
-              <AnimateOnScroll key={area.title} delay={index * 100}>
+              <AnimateOnScroll key={area.title} delay={index * 80} animation={index % 2 === 0 ? 'right' : 'left'}>
                 <div className="focus-card">
                   <div className="focus-card-icon">
                     <area.icon />
@@ -217,7 +221,7 @@ export default function HomePage() {
             </div>
           </AnimateOnScroll>
 
-          <AnimateOnScroll delay={100}>
+          <AnimateOnScroll delay={100} animation="zoom">
             <div className="product-card">
               <div className="product-card-glow" />
               <div className="product-card-inner">
@@ -288,17 +292,17 @@ export default function HomePage() {
       <section className="section" style={{ overflow: 'hidden' }}>
         <div className="vision-bg" />
         <div className="vision-content container">
-          <AnimateOnScroll>
+          <AnimateOnScroll animation="down">
             <span className="section-label">Our Vision</span>
           </AnimateOnScroll>
-          <AnimateOnScroll delay={100}>
+          <AnimateOnScroll delay={100} animation="right">
             <h2 className="section-title" style={{ lineHeight: 1.15 }}>
               Becoming a Leading{' '}
               <span className="text-gold-gradient">Diversified Enterprise</span>
               {' '}in Africa
             </h2>
           </AnimateOnScroll>
-          <AnimateOnScroll delay={200}>
+          <AnimateOnScroll delay={200} animation="left">
             <p className="section-text" style={{ maxWidth: 640, margin: '0 auto 48px' }}>
               We envision becoming a leading diversified enterprise in Africa,
               recognized for operational excellence, strategic growth, and
@@ -320,7 +324,7 @@ export default function HomePage() {
       {/* ══════ CONTACT CTA SECTION ══════ */}
       <section className="section">
         <div className="container" style={{ maxWidth: 960 }}>
-          <AnimateOnScroll>
+          <AnimateOnScroll animation="zoom">
             <div className="cta-card">
               <div className="cta-glow" />
               <div className="cta-content">

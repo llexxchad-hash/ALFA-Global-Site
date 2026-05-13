@@ -2,7 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-export default function AnimateOnScroll({ children, className = '', delay = 0 }) {
+const HIDDEN_CLASS = {
+  up:    'aos-hidden',
+  down:  'aos-fade-down',
+  left:  'aos-slide-left',
+  right: 'aos-slide-right',
+  zoom:  'aos-zoom-in',
+};
+
+export default function AnimateOnScroll({ children, className = '', delay = 0, animation = 'up' }) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -24,10 +32,12 @@ export default function AnimateOnScroll({ children, className = '', delay = 0 })
     return () => observer.disconnect();
   }, []);
 
+  const hiddenClass = HIDDEN_CLASS[animation] || 'aos-hidden';
+
   return (
     <div
       ref={ref}
-      className={`${isVisible ? 'aos-visible' : 'aos-hidden'} ${className}`}
+      className={`${isVisible ? 'aos-visible' : hiddenClass} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

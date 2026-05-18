@@ -12,6 +12,7 @@ const quickLinks = [
 const legalLinks = [
   { href: '/privacy-policy', label: 'HandyLink Privacy Policy' },
   { href: '/data-safety', label: 'HandyLink Data Safety' },
+  { href: '/delete-account', label: 'HandyLink Delete Account' },
   { href: '/terms-and-conditions', label: 'HandyLink Terms & Conditions' },
   { href: '/legal', label: 'Corporate Privacy Policy' },
 ];
